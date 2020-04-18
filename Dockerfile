@@ -12,7 +12,7 @@ WORKDIR /root
 
 RUN apt-get update \
         && apt-get install -y  vim lrzsz curl net-tools inetutils-ping zip \
-        && /bin/bash <\(curl -L -s https://install.direct/go.sh\)\
+        && curl -L -s https://install.direct/go.sh |bash \
                 # 用完包管理器后安排打扫卫生可以显著的减少镜像大小
                 && apt-get clean \
                 && apt-get autoclean \
