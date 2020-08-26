@@ -11,9 +11,10 @@ WORKDIR /root
 #VOLUME /root
 
 RUN apt-get update \
-        && apt-get install -y  vim lrzsz curl net-tools inetutils-ping zip \
+        && apt-get install -y  vim lrzsz curl net-tools inetutils-ping zip python3-pip python-pip \
         python python3 \
         && curl -L -s https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh |bash \
+        && pip3 install requests \
                 # 用完包管理器后安排打扫卫生可以显著的减少镜像大小
                 && apt-get clean \
                 && apt-get autoclean \
