@@ -11,7 +11,7 @@ WORKDIR /root
 #VOLUME /root
 
 RUN apt-get update \
-        && apt-get install -y  vim lrzsz curl net-tools inetutils-ping zip python3-pip python-pip \
+        && apt-get install -y  vim lrzsz curl net-tools inetutils-ping zip python3-pip python-pip python-pycurl python3-pycurl \
         python python3 \
         && curl -L -s https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh |bash \
         && pip3 install requests \
